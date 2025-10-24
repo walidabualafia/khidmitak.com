@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blank Canvas Studio</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#3B82F6',
+                        secondary: '#10B981',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="min-h-screen flex flex-col bg-gray-50">
+    <custom-navbar></custom-navbar>
+    <main class="flex-grow">
+        <!-- Hero Section -->
+        <section class="relative h-[80vh] bg-sand-100">
+            <div class="absolute inset-0 bg-black/30"></div>
+            <div class="container mx-auto h-full flex items-center px-4 relative z-10">
+                <div class="max-w-2xl">
+                    <h1 class="text-5xl font-serif font-bold text-white mb-6">Crafted in the Middle East.<br>Loved in the UK.</h1>
+                    <p class="text-xl text-white/90 mb-8">Discover authentic handcrafted goods with stories woven into every thread, every ceramic, every drop.</p>
+                    <div class="flex gap-4">
+                        <a href="/shop.html" class="bg-olive hover:bg-olive-600 text-white px-6 py-3 rounded-lg font-medium transition">Shop Collection</a>
+                        <a href="/artisans.html" class="border border-white hover:bg-white/10 text-white px-6 py-3 rounded-lg font-medium transition">Meet the Makers</a>
+                    </div>
+                </div>
+            </div>
+            <img src="http://static.photos/textures/1200x630/1" alt="Handcrafted ceramics" class="absolute inset-0 w-full h-full object-cover">
+        </section>
+
+        <!-- Featured Collections -->
+        <section class="py-16 bg-linen">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl font-serif font-bold text-charcoal mb-8 text-center">Explore Our Collections</h2>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <a href="/shop/body-health.html" class="group">
+                        <div class="aspect-square bg-sand-100 rounded-lg overflow-hidden relative">
+                            <img src="http://static.photos/nature/640x360/1" alt="Body & Health" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                            <div class="absolute inset-0 bg-black/10"></div>
+                            <h3 class="absolute bottom-0 left-0 p-6 text-2xl font-serif font-bold text-white">Body & Health</h3>
+                        </div>
+                    </a>
+                    <a href="/shop/home.html" class="group">
+                        <div class="aspect-square bg-sand-100 rounded-lg overflow-hidden relative">
+                            <img src="http://static.photos/home/640x360/1" alt="Home Accessories" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                            <div class="absolute inset-0 bg-black/10"></div>
+                            <h3 class="absolute bottom-0 left-0 p-6 text-2xl font-serif font-bold text-white">Home Accessories</h3>
+                        </div>
+                    </a>
+                    <a href="/shop/faith.html" class="group">
+                        <div class="aspect-square bg-sand-100 rounded-lg overflow-hidden relative">
+                            <img src="http://static.photos/abstract/640x360/1" alt="Faith" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                            <div class="absolute inset-0 bg-black/10"></div>
+                            <h3 class="absolute bottom-0 left-0 p-6 text-2xl font-serif font-bold text-white">Faith</h3>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Artisan Spotlight -->
+        <section class="py-16 bg-white">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl font-serif font-bold text-charcoal mb-8 text-center">Meet the Makers</h2>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="bg-sand-50 rounded-lg overflow-hidden">
+                        <div class="aspect-square relative">
+                            <img src="http://static.photos/people/640x360/1" alt="Artisan" class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-serif font-bold text-charcoal mb-2">Fatima from Nablus</h3>
+                            <p class="text-gray-600 mb-4">8th generation soap maker preserving the traditional Nabulsi soap recipe</p>
+                            <a href="/artisans/fatima-nabulsi.html" class="text-olive font-medium">View Profile →</a>
+                        </div>
+                    </div>
+                    <div class="bg-sand-50 rounded-lg overflow-hidden">
+                        <div class="aspect-square relative">
+                            <img src="http://static.photos/people/640x360/2" alt="Artisan" class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-serif font-bold text-charcoal mb-2">Youssef from Hebron</h3>
+                            <p class="text-gray-600 mb-4">Ceramic artist crafting pieces using techniques passed down for centuries</p>
+                            <a href="/artisans/youssef-hebron.html" class="text-olive font-medium">View Profile →</a>
+                        </div>
+                    </div>
+                    <div class="bg-sand-50 rounded-lg overflow-hidden">
+                        <div class="aspect-square relative">
+                            <img src="http://static.photos/people/640x360/3" alt="Artisan" class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-serif font-bold text-charcoal mb-2">Layla from Damascus</h3>
+                            <p class="text-gray-600 mb-4">Textile artist specializing in traditional Syrian embroidery patterns</p>
+                            <a href="/artisans/layla-damascus.html" class="text-olive font-medium">View Profile →</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+</main>
+
+    <custom-footer></custom-footer>
+
+    <script src="components/navbar.js"></script>
+    <script src="components/footer.js"></script>
+    <script src="script.js"></script>
+    <script>feather.replace();</script>
+</body>
+</html>

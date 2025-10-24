@@ -1,0 +1,67 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&display=swap');
+
+:root {
+    --color-sand: #F5F0E6;
+    --color-linen: #FAF7F2;
+    --color-olive: #6B8E23;
+    --color-charcoal: #36454F;
+    --color-sand-dark: #E8E0D1;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    color: var(--color-charcoal);
+}
+
+.font-serif {
+    font-family: 'Cormorant Garamond', serif;
+}
+
+.bg-sand {
+    background-color: var(--color-sand);
+}
+
+.bg-sand-100 {
+    background-color: var(--color-sand-dark);
+}
+
+.bg-sand-50 {
+    background-color: var(--color-linen);
+}
+
+.bg-olive {
+    background-color: var(--color-olive);
+}
+
+.bg-olive-600 {
+    background-color: #5A7A1E;
+}
+
+.text-charcoal {
+    color: var(--color-charcoal);
+}
+
+.text-olive {
+    color: var(--color-olive);
+}
+
+/* Product card hover effect */
+.group:hover .group-hover\:opacity-75 {
+    opacity: 0.75;
+}
+
+.group:hover .group-hover\:opacity-100 {
+    opacity: 1;
+}
+
+/* Custom animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+    animation: fadeIn 0.6s ease-out forwards;
+}

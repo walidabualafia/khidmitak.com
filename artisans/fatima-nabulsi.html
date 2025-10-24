@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fatima | Artisan Collective</title>
+    <link rel="stylesheet" href="../../style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+</head>
+<body class="min-h-screen flex flex-col bg-gray-50">
+    <custom-navbar></custom-navbar>
+
+    <main class="flex-grow">
+        <!-- Hero Section -->
+        <section class="relative h-[60vh] bg-sand-100">
+            <div class="absolute inset-0 bg-black/30"></div>
+            <div class="container mx-auto h-full flex items-end px-4 pb-16 relative z-10">
+                <div>
+                    <h1 class="text-5xl font-serif font-bold text-white mb-2">Fatima Al-Masri</h1>
+                    <p class="text-xl text-white/90">8th Generation Soap Maker • Nablus, Palestine</p>
+                </div>
+            </div>
+            <img src="http://static.photos/people/1200x630/1" alt="Fatima Al-Masri" class="absolute inset-0 w-full h-full object-cover">
+        </section>
+
+        <!-- Artisan Story -->
+        <section class="py-16 bg-white">
+            <div class="container mx-auto px-4 max-w-4xl">
+                <div class="flex flex-col md:flex-row gap-12">
+                    <div class="md:w-1/3">
+                        <div class="bg-sand-50 p-6 rounded-lg">
+                            <h3 class="font-serif font-bold text-xl mb-4">About the Workshop</h3>
+                            <div class="space-y-4">
+                                <div>
+                                    <p class="text-sm text-gray-500">Location</p>
+                                    <p>Nablus, Palestine</p>
+                                </div>
+                                <div>
+                                    <p class="text-sm text-gray-500">Techniques</p>
+                                    <p>Traditional Nabulsi soap-making</p>
+                                </div>
+                                <div>
+                                    <p class="text-sm text-gray-500">Materials</p>
+                                    <p>Olive oil, water, sodium hydroxide</p>
+                                </div>
+                                <div>
+                                    <p class="text-sm text-gray-500">Years Active</p>
+                                    <p>28 years</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="md:w-2/3">
+                        <h2 class="font-serif font-bold text-3xl mb-6">The Story</h2>
+                        <div class="prose max-w-none">
+                            <p>Fatima Al-Masri comes from a long line of soap makers in Nablus, where the tradition of Nabulsi soap dates back over a thousand years. Her family's workshop has been producing soap using the same methods since the 13th century.</p>
+                            <p class="mt-4">"When I was a little girl, I would watch my grandmother and mother make soap in the traditional way - mixing olive oil with water and qilw (a mixture of sodium compounds from the Dead Sea). The process takes nearly three months from start to finish, with each batch needing to cure in special drying rooms," Fatima recalls.</p>
+                            <p class="mt-4">Today, Fatima maintains these ancient techniques while innovating with new scents like bay leaf and chamomile. Her soaps are still cut by hand and stamped with her family's seal.</p>
+                            <div class="mt-8 border-t border-gray-200 pt-8">
+                                <h3 class="font-serif font-bold text-xl mb-4">Cultural Significance</h3>
+                                <p>Nabulsi soap is more than just a cleansing product - it's a symbol of Palestinian heritage and resilience. The soap's distinctive rectangular shape and golden color have remained unchanged for centuries, making it one of the oldest continuously produced soaps in the world.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Products -->
+        <section class="py-16 bg-linen">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl font-serif font-bold text-charcoal mb-8">Fatima's Creations</h2>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <!-- Product Card 1 -->
+                    <div class="bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition">
+                        <div class="aspect-square relative group">
+                            <img src="http://static.photos/textures/640x360/1" alt="Traditional Nabulsi Soap" class="w-full h-full object-cover group-hover:opacity-75 transition">
+                            <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition">
+                                <button class="bg-olive text-white px-4 py-2 rounded-full">Quick View</button>
+                            </div>
+                        </div>
+                        <div class="p-4">
+                            <div class="flex justify-between items-start">
+                                <div>
+                                    <h3 class="font-medium text-charcoal">Traditional Nabulsi Soap</h3>
+                                    <p class="text-sm text-gray-500">Unscented, 200g</p>
+                                </div>
+                                <span class="font-medium text-charcoal">£12.00</span>
+                            </div>
+                            <button class="mt-4 w-full bg-olive hover:bg-olive-600 text-white py-2 rounded-lg">Add to Cart</button>
+                        </div>
+                    </div>
+
+                    <!-- Product Card 2 -->
+                    <div class="bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition">
+                        <div class="aspect-square relative group">
+                            <img src="http://static.photos/textures/640x360/5" alt="Bay Leaf Nabulsi Soap" class="w-full h-full object-cover group-hover:opacity-75 transition">
+                            <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition">
+                                <button class="bg-olive text-white px-4 py-2 rounded-full">Quick View</button>
+                            </div>
+                        </div>
+                        <div class="p-4">
+                            <div class="flex justify-between items-start">
+                                <div>
+                                    <h3 class="font-medium text-charcoal">Bay Leaf Nabulsi Soap</h3>
+                                    <p class="text-sm text-gray-500">Aromatic, 200g</p>
+                                </div>
+                                <span class="font-medium text-charcoal">£14.00</span>
+                            </div>
+                            <button class="mt-4 w-full bg-olive hover:bg-olive-600 text-white py-2 rounded-lg">Add to Cart</button>
+                        </div>
+                    </div>
+
+                    <!-- Product Card 3 -->
+                    <div class="bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition">
+                        <div class="aspect-square relative group">
+                            <img src="http://static.photos/textures/640x360/6" alt="Gift Set" class="w-full h-full object-cover group-hover:opacity-75 transition">
+                            <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition">
+                                <button class="bg-olive text-white px-4 py-2 rounded-full">Quick View</button>
+                            </div>
+                        </div>
+                        <div class="p-4">
+                            <div class="flex justify-between items-start">
+                                <div>
+                                    <h3 class="font-medium text-charcoal">Nabulsi Soap Gift Set</h3>
+                                    <p class="text-sm text-gray-500">3 varieties, wooden box</p>
+                                </div>
+                                <span class="font-medium text-charcoal">£40.00</span>
+                            </div>
+                            <button class="mt-4 w-full bg-olive hover:bg-olive-600 text-white py-2 rounded-lg">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <custom-footer></custom-footer>
+
+    <script src="../../components/navbar.js"></script>
+    <script src="../../components/footer.js"></script>
+    <script src="../../script.js"></script>
+    <script>
+        feather.replace();
+    </script>
+</body>
+</html>
