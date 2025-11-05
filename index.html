@@ -3,118 +3,284 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blank Canvas Studio</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
-    <script src="https://unpkg.com/feather-icons"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        primary: '#3B82F6',
-                        secondary: '#10B981',
-                    }
-                }
-            }
-        }
-    </script>
+    <meta name="description" content="Khidmitak - Authentic handcrafted goods from the Middle East. Crafted in the Levant, Gulf & North Africa. Loved Worldwide.">
+    <meta name="keywords" content="handcrafted, artisan, Middle Eastern crafts, Palestine, Syria, Jordan, olive oil soap, ceramics, textiles">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Khidmitak - Authentic Middle Eastern Crafts">
+    <meta property="og:description" content="Discover authentic handcrafted goods with stories woven into every piece">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://khidmitak.com">
+
+    <title>Khidmitak - Authentic Middle Eastern Crafts</title>
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/styles.css">
 </head>
-<body class="min-h-screen flex flex-col bg-gray-50">
-    <custom-navbar></custom-navbar>
-    <main class="flex-grow">
+<body>
+    <!-- Header -->
+    <header class="site-header">
+        <div class="container">
+            <div class="header-content">
+                <!-- Logo/Brand -->
+                <a href="index.html" class="brand">خدمتك Khidmitak</a>
+
+                <!-- Desktop Navigation -->
+                <nav class="desktop-nav">
+                    <a href="shop.html">Shop</a>
+                    <a href="artisans.html">Artisans</a>
+                    <a href="journal.html">Journal</a>
+                    <a href="about.html">About</a>
+                </nav>
+
+                <!-- Header Actions -->
+                <div class="header-actions">
+                    <!-- Search Toggle -->
+                    <button id="searchToggle" class="icon-btn" aria-label="Search">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <path d="m21 21-4.35-4.35"></path>
+                        </svg>
+                    </button>
+
+                    <!-- Theme Toggle -->
+                    <button id="themeBtn" class="icon-btn" onclick="toggleTheme()" aria-label="Toggle theme">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                        </svg>
+                    </button>
+
+                    <!-- Language Toggle -->
+                    <button id="langBtn" class="icon-btn" onclick="setLang(document.documentElement.lang === 'en' ? 'ar' : 'en')" aria-label="Change language">
+                        <span class="lang-text">ع</span>
+                    </button>
+
+                    <!-- Cart -->
+                    <button id="cartBtn" class="icon-btn cart-btn" onclick="toggleCart()" aria-label="Shopping cart">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+                            <line x1="3" y1="6" x2="21" y2="6"></line>
+                            <path d="M16 10a4 4 0 0 1-8 0"></path>
+                        </svg>
+                        <span class="cart-count" id="cartCount">0</span>
+                    </button>
+
+                    <!-- Mobile Menu Toggle -->
+                    <button id="menuToggle" class="icon-btn mobile-only" onclick="toggleDrawer()" aria-label="Menu">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="3" y1="12" x2="21" y2="12"></line>
+                            <line x1="3" y1="6" x2="21" y2="6"></line>
+                            <line x1="3" y1="18" x2="21" y2="18"></line>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Search Bar (Hidden by default) -->
+        <div id="searchBar" class="search-bar">
+            <div class="container">
+                <input type="text" id="searchInput" placeholder="Search products..." />
+                <div id="searchResults" class="search-results"></div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Drawer -->
+    <div id="mobileDrawer" class="mobile-drawer">
+        <div class="drawer-content">
+            <button class="drawer-close" onclick="toggleDrawer()">&times;</button>
+            <nav class="drawer-nav">
+                <a href="shop.html">Shop</a>
+                <a href="artisans.html">Artisans</a>
+                <a href="journal.html">Journal</a>
+                <a href="about.html">About</a>
+            </nav>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main>
         <!-- Hero Section -->
-        <section class="relative h-[80vh] bg-sand-100">
-            <div class="absolute inset-0 bg-black/30"></div>
-            <div class="container mx-auto h-full flex items-center px-4 relative z-10">
-                <div class="max-w-2xl">
-                    <h1 class="text-5xl font-serif font-bold text-white mb-6">Crafted in the Middle East.<br>Loved in the UK.</h1>
-                    <p class="text-xl text-white/90 mb-8">Discover authentic handcrafted goods with stories woven into every thread, every ceramic, every drop.</p>
-                    <div class="flex gap-4">
-                        <a href="/shop.html" class="bg-olive hover:bg-olive-600 text-white px-6 py-3 rounded-lg font-medium transition">Shop Collection</a>
-                        <a href="/artisans.html" class="border border-white hover:bg-white/10 text-white px-6 py-3 rounded-lg font-medium transition">Meet the Makers</a>
-                    </div>
-                </div>
-            </div>
-            <img src="http://static.photos/textures/1200x630/1" alt="Handcrafted ceramics" class="absolute inset-0 w-full h-full object-cover">
-        </section>
-
-        <!-- Featured Collections -->
-        <section class="py-16 bg-linen">
-            <div class="container mx-auto px-4">
-                <h2 class="text-3xl font-serif font-bold text-charcoal mb-8 text-center">Explore Our Collections</h2>
-                <div class="grid md:grid-cols-3 gap-8">
-                    <a href="/shop/body-health.html" class="group">
-                        <div class="aspect-square bg-sand-100 rounded-lg overflow-hidden relative">
-                            <img src="http://static.photos/nature/640x360/1" alt="Body & Health" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-                            <div class="absolute inset-0 bg-black/10"></div>
-                            <h3 class="absolute bottom-0 left-0 p-6 text-2xl font-serif font-bold text-white">Body & Health</h3>
-                        </div>
-                    </a>
-                    <a href="/shop/home.html" class="group">
-                        <div class="aspect-square bg-sand-100 rounded-lg overflow-hidden relative">
-                            <img src="http://static.photos/home/640x360/1" alt="Home Accessories" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-                            <div class="absolute inset-0 bg-black/10"></div>
-                            <h3 class="absolute bottom-0 left-0 p-6 text-2xl font-serif font-bold text-white">Home Accessories</h3>
-                        </div>
-                    </a>
-                    <a href="/shop/faith.html" class="group">
-                        <div class="aspect-square bg-sand-100 rounded-lg overflow-hidden relative">
-                            <img src="http://static.photos/abstract/640x360/1" alt="Faith" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-                            <div class="absolute inset-0 bg-black/10"></div>
-                            <h3 class="absolute bottom-0 left-0 p-6 text-2xl font-serif font-bold text-white">Faith</h3>
-                        </div>
-                    </a>
-                </div>
-            </div>
-        </section>
-
-        <!-- Artisan Spotlight -->
-        <section class="py-16 bg-white">
-            <div class="container mx-auto px-4">
-                <h2 class="text-3xl font-serif font-bold text-charcoal mb-8 text-center">Meet the Makers</h2>
-                <div class="grid md:grid-cols-3 gap-8">
-                    <div class="bg-sand-50 rounded-lg overflow-hidden">
-                        <div class="aspect-square relative">
-                            <img src="http://static.photos/people/640x360/1" alt="Artisan" class="w-full h-full object-cover">
-                        </div>
-                        <div class="p-6">
-                            <h3 class="text-xl font-serif font-bold text-charcoal mb-2">Fatima from Nablus</h3>
-                            <p class="text-gray-600 mb-4">8th generation soap maker preserving the traditional Nabulsi soap recipe</p>
-                            <a href="/artisans/fatima-nabulsi.html" class="text-olive font-medium">View Profile →</a>
-                        </div>
-                    </div>
-                    <div class="bg-sand-50 rounded-lg overflow-hidden">
-                        <div class="aspect-square relative">
-                            <img src="http://static.photos/people/640x360/2" alt="Artisan" class="w-full h-full object-cover">
-                        </div>
-                        <div class="p-6">
-                            <h3 class="text-xl font-serif font-bold text-charcoal mb-2">Youssef from Hebron</h3>
-                            <p class="text-gray-600 mb-4">Ceramic artist crafting pieces using techniques passed down for centuries</p>
-                            <a href="/artisans/youssef-hebron.html" class="text-olive font-medium">View Profile →</a>
-                        </div>
-                    </div>
-                    <div class="bg-sand-50 rounded-lg overflow-hidden">
-                        <div class="aspect-square relative">
-                            <img src="http://static.photos/people/640x360/3" alt="Artisan" class="w-full h-full object-cover">
-                        </div>
-                        <div class="p-6">
-                            <h3 class="text-xl font-serif font-bold text-charcoal mb-2">Layla from Damascus</h3>
-                            <p class="text-gray-600 mb-4">Textile artist specializing in traditional Syrian embroidery patterns</p>
-                            <a href="/artisans/layla-damascus.html" class="text-olive font-medium">View Profile →</a>
-                        </div>
+        <section class="hero">
+            <div class="hero-pattern"></div>
+            <div class="container">
+                <div class="hero-content">
+                    <h1 class="hero-title">Crafted in the Levant, Gulf & North Africa.<br>Loved Worldwide.</h1>
+                    <p class="hero-subtitle">Discover authentic handcrafted goods with stories woven into every thread, every ceramic, every drop.</p>
+                    <div class="hero-buttons">
+                        <a href="shop.html" class="btn btn-primary">Shop Collection</a>
+                        <a href="artisans.html" class="btn btn-secondary">Meet the Artisans</a>
                     </div>
                 </div>
             </div>
         </section>
-</main>
 
-    <custom-footer></custom-footer>
+        <!-- Featured Products -->
+        <section class="section">
+            <div class="container">
+                <h2 class="section-title">Featured Collection</h2>
+                <p class="section-subtitle">Handpicked pieces from our artisan partners</p>
 
-    <script src="components/navbar.js"></script>
-    <script src="components/footer.js"></script>
-    <script src="script.js"></script>
-    <script>feather.replace();</script>
+                <div id="featuredProducts" class="product-grid">
+                    <!-- Products loaded via JavaScript -->
+                </div>
+
+                <div style="text-align: center; margin-top: 48px;">
+                    <a href="shop.html" class="btn btn-primary">View All Products</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Categories -->
+        <section class="section categories-section">
+            <div class="container">
+                <h2 class="section-title">Shop by Category</h2>
+
+                <div class="category-grid">
+                    <a href="shop.html?category=Body+%26+Health" class="category-card">
+                        <img src="https://images.unsplash.com/photo-1611152763598-6c6b0ccc0107?q=80&w=800" alt="Body & Health" />
+                        <div class="category-overlay">
+                            <h3>Body & Health</h3>
+                            <p>Natural soaps & wellness products</p>
+                        </div>
+                    </a>
+
+                    <a href="shop.html?category=Home" class="category-card">
+                        <img src="https://images.unsplash.com/photo-1578500494198-246f612d3b3d?q=80&w=800" alt="Home" />
+                        <div class="category-overlay">
+                            <h3>Home</h3>
+                            <p>Ceramics, textiles & décor</p>
+                        </div>
+                    </a>
+
+                    <a href="shop.html?category=Faith" class="category-card">
+                        <img src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?q=80&w=800" alt="Faith" />
+                        <div class="category-overlay">
+                            <h3>Faith</h3>
+                            <p>Prayer beads, calligraphy & more</p>
+                        </div>
+                    </a>
+
+                    <a href="shop.html?category=Textiles" class="category-card">
+                        <img src="https://images.unsplash.com/photo-1601924994987-69e26d50dc26?q=80&w=800" alt="Textiles" />
+                        <div class="category-overlay">
+                            <h3>Textiles</h3>
+                            <p>Scarves, embroidery & fabrics</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Newsletter -->
+        <section class="newsletter-section">
+            <div class="container">
+                <div class="newsletter-content">
+                    <h2>Stay Connected</h2>
+                    <p>Get updates on new artisan stories, product launches, and exclusive offers</p>
+                    <form id="newsletterForm" class="newsletter-form">
+                        <input type="email" placeholder="Enter your email" required />
+                        <button type="submit" class="btn btn-primary">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <h3 class="footer-brand">خدمتك Khidmitak</h3>
+                    <p>Connecting artisans with conscious consumers worldwide.</p>
+                </div>
+
+                <div>
+                    <h4>Shop</h4>
+                    <a href="shop.html">All Products</a>
+                    <a href="shop.html?category=Body+%26+Health">Body & Health</a>
+                    <a href="shop.html?category=Home">Home</a>
+                    <a href="shop.html?category=Faith">Faith</a>
+                </div>
+
+                <div>
+                    <h4>About</h4>
+                    <a href="artisans.html">Our Artisans</a>
+                    <a href="journal.html">Journal</a>
+                    <a href="about.html">Our Story</a>
+                </div>
+
+                <div>
+                    <h4>Support</h4>
+                    <a href="#">Contact Us</a>
+                    <a href="#">Shipping Info</a>
+                    <a href="#">Returns</a>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2024 Khidmitak. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Cart Sidebar -->
+    <div id="cartSidebar" class="cart-sidebar">
+        <div class="cart-header">
+            <h3>Your Cart</h3>
+            <button class="cart-close" onclick="toggleCart()">&times;</button>
+        </div>
+        <div id="cartItems" class="cart-items">
+            <!-- Cart items loaded via JavaScript -->
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span id="cartTotal">£0.00</span>
+            </div>
+            <button class="btn btn-primary btn-block" onclick="checkout()">Proceed to Checkout</button>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/config.js"></script>
+    <script src="js/cart.js"></script>
+    <script src="js/search.js"></script>
+    <script src="js/main.js"></script>
+
+    <script>
+        // Initialize on page load
+        document.addEventListener('DOMContentLoaded', () => {
+            // Load saved theme
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme === 'dark') {
+                document.documentElement.classList.add('dark');
+            }
+
+            // Load saved language
+            const savedLang = localStorage.getItem('lang');
+            if (savedLang) {
+                setLang(savedLang);
+            }
+
+            // Load featured products
+            loadFeaturedProducts();
+
+            // Update cart count
+            updateCartCount();
+
+            // Newsletter form
+            const form = document.getElementById('newsletterForm');
+            if (form) {
+                form.addEventListener('submit', (e) => {
+                    e.preventDefault();
+                    alert('Thank you for subscribing!');
+                    form.reset();
+                });
+            }
+        });
+    </script>
 </body>
 </html>

@@ -1,0 +1,323 @@
+# 🚀 Khidmitak Deployment Checklist
+
+Use this checklist to ensure your site is production-ready before launch.
+
+## ✅ Pre-Launch Checklist
+
+### Content & Assets
+
+- [ ] **Replace placeholder images** with real product photos
+  - Product images (minimum 800x800px, WebP or JPG)
+  - Artisan photos
+  - Hero images (1200x800px minimum)
+  - Open Graph image (1200x630px for social sharing)
+  
+- [ ] **Add favicon** (`favicon.png` 32x32px minimum, also 180x180px for Apple)
+
+- [ ] **Update product data** in `js/config.js`
+  - Accurate prices
+  - Real descriptions
+  - Correct inventory status
+  - Proper SKUs
+  - Valid image URLs
+
+- [ ] **Verify all text content**
+  - Company name
+  - Contact information
+  - Shipping policies
+  - Return policies
+  - Privacy policy
+  - Terms of service
+
+### Configuration
+
+- [ ] **Update `js/config.js`**
+  ```javascript
+  siteName: 'Your Actual Name',
+  currency: 'GBP',  // or USD, EUR
+  freeShippingThreshold: 50,
+  // ... etc
+  ```
+
+- [ ] **Configure Shopify** (if using)
+  - Create Shopify store
+  - Add Storefront API token
+  - Update SHOPIFY_CONFIG
+  - Set shopifyIntegration: true
+  - Test checkout flow
+
+- [ ] **Set up domain**
+  - Purchase domain name
+  - Configure DNS
+  - Add SSL certificate (automatic with Netlify/Vercel)
+
+### SEO & Meta
+
+- [ ] **Update meta tags** in all HTML files
+  - Page titles
+  - Meta descriptions
+  - Open Graph tags
+  - Twitter Card tags
+
+- [ ] **Create sitemap.xml**
+
+- [ ] **Add robots.txt**
+
+- [ ] **Submit to Google Search Console**
+
+- [ ] **Submit to Bing Webmaster Tools**
+
+### Analytics & Tracking
+
+- [ ] **Set up Google Analytics**
+  - Create GA4 property
+  - Add tracking code to all pages
+  - Test events
+
+- [ ] **Facebook Pixel** (optional)
+  - Create pixel
+  - Add code
+  - Test events
+
+- [ ] **Google Tag Manager** (optional)
+  - Create container
+  - Add tags
+  - Test firing
+
+### Email & Forms
+
+- [ ] **Newsletter integration**
+  - Sign up for Mailchimp/Klaviyo/ConvertKit
+  - Get API key
+  - Update newsletter form endpoint
+  - Test subscription
+
+- [ ] **Contact form** (if added)
+  - Set up backend (Formspree, Netlify Forms, etc.)
+  - Test submissions
+  - Configure autoresponders
+
+### Payment & Checkout
+
+- [ ] **Shopify payment setup**
+  - Enable payment providers
+  - Set up Shopify Payments or PayPal
+  - Test checkout process
+  - Verify tax calculations
+
+- [ ] **Shipping configuration**
+  - Set shipping zones
+  - Configure rates
+  - Test shipping calculations
+
+### Legal & Compliance
+
+- [ ] **Privacy Policy page** created
+
+- [ ] **Terms of Service page** created
+
+- [ ] **Cookie consent** (if required in your region)
+  - Add cookie banner
+  - Link to privacy policy
+
+- [ ] **GDPR compliance** (if selling to EU)
+  - Data collection disclosure
+  - Right to deletion
+  - Data portability
+
+- [ ] **Accessibility statement**
+
+### Testing
+
+- [ ] **Browser testing**
+  - [ ] Chrome (desktop & mobile)
+  - [ ] Firefox
+  - [ ] Safari (desktop & iOS)
+  - [ ] Edge
+
+- [ ] **Device testing**
+  - [ ] Desktop (1920x1080)
+  - [ ] Laptop (1366x768)
+  - [ ] Tablet (768x1024)
+  - [ ] Mobile (375x667)
+  - [ ] Large mobile (414x896)
+
+- [ ] **Functionality testing**
+  - [ ] Add to cart
+  - [ ] Update cart quantities
+  - [ ] Remove from cart
+  - [ ] Search products
+  - [ ] Filter products
+  - [ ] Sort products
+  - [ ] Product detail pages
+  - [ ] Checkout flow
+  - [ ] Newsletter signup
+  - [ ] Theme toggle (light/dark)
+  - [ ] Language toggle (EN/AR)
+  - [ ] Mobile menu
+  - [ ] All links work
+
+- [ ] **Performance testing**
+  - [ ] Run Lighthouse audit (aim for 90+ scores)
+  - [ ] Test page load speed (aim for <3 seconds)
+  - [ ] Check image optimization
+  - [ ] Verify lazy loading works
+
+- [ ] **SEO testing**
+  - [ ] Meta tags present
+  - [ ] Alt text on images
+  - [ ] Heading hierarchy correct
+  - [ ] URLs are descriptive
+  - [ ] Internal linking
+
+- [ ] **Accessibility testing**
+  - [ ] Run WAVE tool
+  - [ ] Keyboard navigation works
+  - [ ] Screen reader friendly
+  - [ ] Color contrast adequate
+  - [ ] Focus indicators visible
+
+### Security
+
+- [ ] **HTTPS enabled** (automatic with most hosts)
+
+- [ ] **Form validation**
+  - Client-side validation
+  - Server-side validation (if applicable)
+
+- [ ] **Content Security Policy** (optional but recommended)
+
+- [ ] **No sensitive data** in JavaScript files
+
+### Backup & Maintenance
+
+- [ ] **Version control** set up (Git)
+
+- [ ] **Backup plan**
+  - Code backed up
+  - Database backup plan (if using)
+  - Regular backup schedule
+
+- [ ] **Monitoring** set up
+  - Uptime monitoring (UptimeRobot, Pingdom)
+  - Error tracking (Sentry)
+  - Performance monitoring
+
+## 🎯 Launch Day
+
+- [ ] **Final content review**
+  - Proofread all text
+  - Check all images
+  - Verify prices
+
+- [ ] **Test purchase flow** end-to-end
+  - Complete a real test order
+  - Verify email confirmations
+  - Check order appears in Shopify
+
+- [ ] **Clear test data**
+  - Remove test products (if any)
+  - Clear test orders
+  - Reset analytics
+
+- [ ] **Deploy to production**
+  - Push final code
+  - Verify deployment successful
+  - Check all pages live
+
+- [ ] **DNS propagation** (if new domain)
+  - Wait for DNS to propagate (up to 48 hours)
+  - Verify domain works
+
+- [ ] **Announce launch**
+  - Social media posts
+  - Email to subscribers
+  - Press release (if applicable)
+
+## 📊 Post-Launch (Week 1)
+
+- [ ] **Monitor analytics**
+  - Check visitor numbers
+  - Track conversion rates
+  - Review bounce rates
+
+- [ ] **Monitor errors**
+  - Check error logs
+  - Fix any bugs found
+  - Monitor console errors
+
+- [ ] **Customer feedback**
+  - Set up feedback mechanism
+  - Monitor support emails
+  - Address issues quickly
+
+- [ ] **Performance check**
+  - Re-run Lighthouse
+  - Check load times
+  - Optimize if needed
+
+## 🔧 Ongoing Maintenance
+
+### Weekly
+- [ ] Check for broken links
+- [ ] Review analytics
+- [ ] Monitor uptime
+- [ ] Check error logs
+
+### Monthly
+- [ ] Update products/content
+- [ ] Review and respond to feedback
+- [ ] Check security updates
+- [ ] Backup site
+
+### Quarterly
+- [ ] Content audit
+- [ ] SEO review
+- [ ] Performance optimization
+- [ ] Security audit
+- [ ] Accessibility review
+
+## 🆘 Emergency Contacts
+
+**Hosting Support:**
+- Netlify: support@netlify.com
+- Vercel: support@vercel.com
+
+**Shopify Support:**
+- Phone: [Your region]
+- Email: support@shopify.com
+
+**Domain Registrar:**
+- Company: _______________
+- Support: _______________
+
+**Developer/Agency:**
+- Name: _______________
+- Email: _______________
+- Phone: _______________
+
+---
+
+## ✨ Launch Command
+
+When everything is checked:
+
+```bash
+# For Netlify
+netlify deploy --prod
+
+# For Vercel
+vercel --prod
+
+# For GitHub Pages
+git push origin main
+
+# For FTP
+# Upload files via FileZilla/Cyberduck
+```
+
+**Congratulations! Your site is live! 🎉**
+
+---
+
+Remember to keep this checklist and update it as you add features or make changes to your site.

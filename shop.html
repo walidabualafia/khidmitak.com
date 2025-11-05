@@ -3,134 +3,407 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shop | Artisan Collective</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <meta name="description" content="Shop authentic handcrafted goods from Middle Eastern artisans">
+    <title>Shop - Khidmitak</title>
+    <link rel="stylesheet" href="css/styles.css">
 </head>
-<body class="min-h-screen flex flex-col bg-gray-50">
-    <custom-navbar></custom-navbar>
+<body>
+    <!-- Header -->
+    <header class="site-header">
+        <div class="container">
+            <div class="header-content">
+                <a href="index.html" class="brand">خدمتك Khidmitak</a>
 
-    <main class="flex-grow">
-        <div class="container mx-auto px-4 py-8">
-            <div class="flex items-center justify-between mb-8">
-                <h1 class="text-3xl font-serif font-bold text-charcoal">Shop All</h1>
-                <div class="flex items-center gap-4">
-                    <button class="flex items-center gap-2 text-gray-600">
-                        <span>Filters</span>
-                        <i data-feather="filter"></i>
+                <nav class="desktop-nav">
+                    <a href="shop.html" class="active">Shop</a>
+                    <a href="artisans.html">Artisans</a>
+                    <a href="journal.html">Journal</a>
+                    <a href="about.html">About</a>
+                </nav>
+
+                <div class="header-actions">
+                    <button id="searchToggle" class="icon-btn" aria-label="Search">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <path d="m21 21-4.35-4.35"></path>
+                        </svg>
                     </button>
-                    <div class="relative">
-                        <select class="appearance-none bg-white border border-gray-300 rounded-lg pl-4 pr-8 py-2">
-                            <option>Sort by: Featured</option>
-                            <option>Newest Arrivals</option>
-                            <option>Price: Low to High</option>
-                            <option>Price: High to Low</option>
-                        </select>
-                        <i data-feather="chevron-down" class="absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none"></i>
-                    </div>
-                </div>
-            </div>
 
-            <div class="grid md:grid-cols-4 gap-8">
-                <!-- Product Card 1 -->
-                <div class="bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition">
-                    <div class="aspect-square relative group">
-                        <img src="http://static.photos/textures/640x360/1" alt="Nabulsi Soap" class="w-full h-full object-cover group-hover:opacity-75 transition">
-                        <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition">
-                            <button class="bg-olive text-white px-4 py-2 rounded-full">Quick View</button>
-                        </div>
-                        <div class="absolute top-4 right-4 bg-white rounded-full w-10 h-10 flex items-center justify-center shadow-sm">
-                            <i data-feather="heart" class="text-gray-400 hover:text-red-500 cursor-pointer"></i>
-                        </div>
-                    </div>
-                    <div class="p-4">
-                        <div class="flex justify-between items-start">
-                            <div>
-                                <h3 class="font-medium text-charcoal">Nabulsi Soap</h3>
-                                <p class="text-sm text-gray-500">Fatima, Nablus</p>
-                            </div>
-                            <span class="font-medium text-charcoal">£12.00</span>
-                        </div>
-                    </div>
-                </div>
+                    <button id="themeBtn" class="icon-btn" onclick="toggleTheme()" aria-label="Toggle theme">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                        </svg>
+                    </button>
 
-                <!-- Product Card 2 -->
-                <div class="bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition">
-                    <div class="aspect-square relative group">
-                        <img src="http://static.photos/textures/640x360/2" alt="Hebron Ceramic Bowl" class="w-full h-full object-cover group-hover:opacity-75 transition">
-                        <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition">
-                            <button class="bg-olive text-white px-4 py-2 rounded-full">Quick View</button>
-                        </div>
-                        <div class="absolute top-4 right-4 bg-white rounded-full w-10 h-10 flex items-center justify-center shadow-sm">
-                            <i data-feather="heart" class="text-gray-400 hover:text-red-500 cursor-pointer"></i>
-                        </div>
-                    </div>
-                    <div class="p-4">
-                        <div class="flex justify-between items-start">
-                            <div>
-                                <h3 class="font-medium text-charcoal">Hebron Ceramic Bowl</h3>
-                                <p class="text-sm text-gray-500">Youssef, Hebron</p>
-                            </div>
-                            <span class="font-medium text-charcoal">£28.00</span>
-                        </div>
-                    </div>
-                </div>
+                    <button id="langBtn" class="icon-btn" onclick="setLang(document.documentElement.lang === 'en' ? 'ar' : 'en')" aria-label="Change language">
+                        <span class="lang-text">ع</span>
+                    </button>
 
-                <!-- Product Card 3 -->
-                <div class="bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition">
-                    <div class="aspect-square relative group">
-                        <img src="http://static.photos/textures/640x360/3" alt="Damascus Embroidery Scarf" class="w-full h-full object-cover group-hover:opacity-75 transition">
-                        <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition">
-                            <button class="bg-olive text-white px-4 py-2 rounded-full">Quick View</button>
-                        </div>
-                        <div class="absolute top-4 right-4 bg-white rounded-full w-10 h-10 flex items-center justify-center shadow-sm">
-                            <i data-feather="heart" class="text-gray-400 hover:text-red-500 cursor-pointer"></i>
-                        </div>
-                    </div>
-                    <div class="p-4">
-                        <div class="flex justify-between items-start">
-                            <div>
-                                <h3 class="font-medium text-charcoal">Damascus Embroidery Scarf</h3>
-                                <p class="text-sm text-gray-500">Layla, Damascus</p>
-                            </div>
-                            <span class="font-medium text-charcoal">£45.00</span>
-                        </div>
-                    </div>
-                </div>
+                    <button id="cartBtn" class="icon-btn cart-btn" onclick="toggleCart()" aria-label="Shopping cart">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+                            <line x1="3" y1="6" x2="21" y2="6"></line>
+                            <path d="M16 10a4 4 0 0 1-8 0"></path>
+                        </svg>
+                        <span class="cart-count" id="cartCount">0</span>
+                    </button>
 
-                <!-- Product Card 4 -->
-                <div class="bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition">
-                    <div class="aspect-square relative group">
-                        <img src="http://static.photos/textures/640x360/4" alt="Olive Wood Comb" class="w-full h-full object-cover group-hover:opacity-75 transition">
-                        <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition">
-                            <button class="bg-olive text-white px-4 py-2 rounded-full">Quick View</button>
-                        </div>
-                        <div class="absolute top-4 right-4 bg-white rounded-full w-10 h-10 flex items-center justify-center shadow-sm">
-                            <i data-feather="heart" class="text-gray-400 hover:text-red-500 cursor-pointer"></i>
-                        </div>
-                    </div>
-                    <div class="p-4">
-                        <div class="flex justify-between items-start">
-                            <div>
-                                <h3 class="font-medium text-charcoal">Olive Wood Comb</h3>
-                                <p class="text-sm text-gray-500">Ahmad, Bethlehem</p>
-                            </div>
-                            <span class="font-medium text-charcoal">£18.00</span>
-                        </div>
-                    </div>
+                    <button id="menuToggle" class="icon-btn mobile-only" onclick="toggleDrawer()" aria-label="Menu">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="3" y1="12" x2="21" y2="12"></line>
+                            <line x1="3" y1="6" x2="21" y2="6"></line>
+                            <line x1="3" y1="18" x2="21" y2="18"></line>
+                        </svg>
+                    </button>
                 </div>
             </div>
         </div>
+
+        <div id="searchBar" class="search-bar">
+            <div class="container">
+                <input type="text" id="searchInput" placeholder="Search products..." />
+                <div id="searchResults" class="search-results"></div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Drawer -->
+    <div id="mobileDrawer" class="mobile-drawer">
+        <div class="drawer-content">
+            <button class="drawer-close" onclick="toggleDrawer()">&times;</button>
+            <nav class="drawer-nav">
+                <a href="shop.html">Shop</a>
+                <a href="artisans.html">Artisans</a>
+                <a href="journal.html">Journal</a>
+                <a href="about.html">About</a>
+            </nav>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main>
+        <section class="section">
+            <div class="container">
+                <!-- Page Header -->
+                <div class="shop-header">
+                    <div>
+                        <h1 class="page-title">Shop All Products</h1>
+                        <p class="page-subtitle" id="productCount">Loading...</p>
+                    </div>
+
+                    <div class="shop-controls">
+                        <button id="filterToggle" class="btn btn-secondary">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <line x1="4" y1="21" x2="4" y2="14"></line>
+                                <line x1="4" y1="10" x2="4" y2="3"></line>
+                                <line x1="12" y1="21" x2="12" y2="12"></line>
+                                <line x1="12" y1="8" x2="12" y2="3"></line>
+                                <line x1="20" y1="21" x2="20" y2="16"></line>
+                                <line x1="20" y1="12" x2="20" y2="3"></line>
+                                <line x1="1" y1="14" x2="7" y2="14"></line>
+                                <line x1="9" y1="8" x2="15" y2="8"></line>
+                                <line x1="17" y1="16" x2="23" y2="16"></line>
+                            </svg>
+                            Filters
+                        </button>
+
+                        <select id="sortSelect" class="form-select">
+                            <option value="featured">Featured</option>
+                            <option value="newest">Newest</option>
+                            <option value="price-low">Price: Low to High</option>
+                            <option value="price-high">Price: High to Low</option>
+                            <option value="name">Name: A-Z</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Filters Sidebar (Hidden by default on mobile) -->
+                <div class="shop-layout">
+                    <aside id="filterSidebar" class="filter-sidebar">
+                        <div class="filter-section">
+                            <h3>Category</h3>
+                            <div class="filter-group" id="categoryFilters">
+                                <!-- Loaded via JS -->
+                            </div>
+                        </div>
+
+                        <div class="filter-section">
+                            <h3>Origin</h3>
+                            <div class="filter-group" id="originFilters">
+                                <!-- Loaded via JS -->
+                            </div>
+                        </div>
+
+                        <div class="filter-section">
+                            <h3>Price Range</h3>
+                            <div class="price-range">
+                                <input type="number" id="minPrice" placeholder="Min" min="0" />
+                                <span>to</span>
+                                <input type="number" id="maxPrice" placeholder="Max" min="0" />
+                            </div>
+                            <button class="btn btn-primary btn-sm" onclick="applyPriceFilter()" style="width: 100%; margin-top: 12px;">Apply</button>
+                        </div>
+
+                        <button class="btn btn-secondary btn-block" onclick="clearFilters()">Clear All Filters</button>
+                    </aside>
+
+                    <!-- Products Grid -->
+                    <div class="shop-content">
+                        <div id="activeFilters" class="active-filters"></div>
+                        <div id="productsGrid" class="product-grid">
+                            <!-- Products loaded via JavaScript -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
 
-    <custom-footer></custom-footer>
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <h3 class="footer-brand">خدمتك Khidmitak</h3>
+                    <p>Connecting artisans with conscious consumers worldwide.</p>
+                </div>
 
-    <script src="components/navbar.js"></script>
-    <script src="components/footer.js"></script>
-    <script src="script.js"></script>
+                <div>
+                    <h4>Shop</h4>
+                    <a href="shop.html">All Products</a>
+                    <a href="shop.html?category=Body+%26+Health">Body & Health</a>
+                    <a href="shop.html?category=Home">Home</a>
+                    <a href="shop.html?category=Faith">Faith</a>
+                </div>
+
+                <div>
+                    <h4>About</h4>
+                    <a href="artisans.html">Our Artisans</a>
+                    <a href="journal.html">Journal</a>
+                    <a href="about.html">Our Story</a>
+                </div>
+
+                <div>
+                    <h4>Support</h4>
+                    <a href="#">Contact Us</a>
+                    <a href="#">Shipping Info</a>
+                    <a href="#">Returns</a>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2024 Khidmitak. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Cart Sidebar -->
+    <div id="cartSidebar" class="cart-sidebar">
+        <div class="cart-header">
+            <h3>Your Cart</h3>
+            <button class="cart-close" onclick="toggleCart()">&times;</button>
+        </div>
+        <div id="cartItems" class="cart-items"></div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span id="cartTotal">£0.00</span>
+            </div>
+            <button class="btn btn-primary btn-block" onclick="checkout()">Proceed to Checkout</button>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/config.js"></script>
+    <script src="js/cart.js"></script>
+    <script src="js/search.js"></script>
+    <script src="js/main.js"></script>
+
     <script>
-        feather.replace();
+        // Shop page specific functionality
+        let currentFilters = {
+            category: null,
+            origin: null,
+            minPrice: null,
+            maxPrice: null,
+            sort: 'featured'
+        };
+
+        document.addEventListener('DOMContentLoaded', () => {
+            // Load saved theme
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme === 'dark') {
+                document.documentElement.classList.add('dark');
+            }
+
+            // Update cart count
+            updateCartCount();
+
+            // Check URL parameters for filters
+            const urlParams = new URLSearchParams(window.location.search);
+            if (urlParams.has('category')) {
+                currentFilters.category = urlParams.get('category');
+            }
+
+            // Load filters and products
+            loadFilters();
+            loadProducts();
+
+            // Sort select handler
+            document.getElementById('sortSelect').addEventListener('change', (e) => {
+                currentFilters.sort = e.target.value;
+                loadProducts();
+            });
+
+            // Filter toggle (mobile)
+            document.getElementById('filterToggle').addEventListener('click', () => {
+                document.getElementById('filterSidebar').classList.toggle('active');
+            });
+        });
+
+        function loadFilters() {
+            // Get unique categories
+            const categories = [...new Set(PRODUCTS_DATA.map(p => p.category))];
+            const categoryFilters = document.getElementById('categoryFilters');
+            categoryFilters.innerHTML = categories.map(cat => `
+                <label class="filter-checkbox">
+                    <input type="checkbox" value="${cat}" ${currentFilters.category === cat ? 'checked' : ''}
+                           onchange="filterByCategory('${cat}', this.checked)" />
+                    <span>${cat}</span>
+                </label>
+            `).join('');
+
+            // Get unique origins
+            const origins = [...new Set(PRODUCTS_DATA.map(p => p.origin))];
+            const originFilters = document.getElementById('originFilters');
+            originFilters.innerHTML = origins.map(origin => `
+                <label class="filter-checkbox">
+                    <input type="checkbox" value="${origin}" ${currentFilters.origin === origin ? 'checked' : ''}
+                           onchange="filterByOrigin('${origin}', this.checked)" />
+                    <span>${origin}</span>
+                </label>
+            `).join('');
+        }
+
+        function filterByCategory(category, checked) {
+            currentFilters.category = checked ? category : null;
+            loadProducts();
+            updateActiveFilters();
+        }
+
+        function filterByOrigin(origin, checked) {
+            currentFilters.origin = checked ? origin : null;
+            loadProducts();
+            updateActiveFilters();
+        }
+
+        function applyPriceFilter() {
+            currentFilters.minPrice = parseFloat(document.getElementById('minPrice').value) || null;
+            currentFilters.maxPrice = parseFloat(document.getElementById('maxPrice').value) || null;
+            loadProducts();
+            updateActiveFilters();
+        }
+
+        function clearFilters() {
+            currentFilters = {
+                category: null,
+                origin: null,
+                minPrice: null,
+                maxPrice: null,
+                sort: 'featured'
+            };
+            document.querySelectorAll('.filter-checkbox input').forEach(cb => cb.checked = false);
+            document.getElementById('minPrice').value = '';
+            document.getElementById('maxPrice').value = '';
+            loadProducts();
+            updateActiveFilters();
+        }
+
+        function updateActiveFilters() {
+            const container = document.getElementById('activeFilters');
+            const filters = [];
+
+            if (currentFilters.category) filters.push({ label: currentFilters.category, key: 'category' });
+            if (currentFilters.origin) filters.push({ label: currentFilters.origin, key: 'origin' });
+            if (currentFilters.minPrice || currentFilters.maxPrice) {
+                const priceLabel = `£${currentFilters.minPrice || 0} - £${currentFilters.maxPrice || '∞'}`;
+                filters.push({ label: priceLabel, key: 'price' });
+            }
+
+            if (filters.length === 0) {
+                container.innerHTML = '';
+                return;
+            }
+
+            container.innerHTML = filters.map(f => `
+                <span class="filter-tag">
+                    ${f.label}
+                    <button onclick="removeFilter('${f.key}')">&times;</button>
+                </span>
+            `).join('');
+        }
+
+        function removeFilter(key) {
+            if (key === 'price') {
+                currentFilters.minPrice = null;
+                currentFilters.maxPrice = null;
+                document.getElementById('minPrice').value = '';
+                document.getElementById('maxPrice').value = '';
+            } else {
+                currentFilters[key] = null;
+                document.querySelectorAll(`.filter-checkbox input[value="${currentFilters[key]}"]`).forEach(cb => cb.checked = false);
+            }
+            loadProducts();
+            updateActiveFilters();
+        }
+
+        function loadProducts() {
+            let filtered = [...PRODUCTS_DATA];
+
+            // Apply filters
+            if (currentFilters.category) {
+                filtered = filtered.filter(p => p.category === currentFilters.category);
+            }
+            if (currentFilters.origin) {
+                filtered = filtered.filter(p => p.origin === currentFilters.origin);
+            }
+            if (currentFilters.minPrice !== null) {
+                filtered = filtered.filter(p => p.price >= currentFilters.minPrice);
+            }
+            if (currentFilters.maxPrice !== null) {
+                filtered = filtered.filter(p => p.price <= currentFilters.maxPrice);
+            }
+
+            // Apply sorting
+            switch(currentFilters.sort) {
+                case 'newest':
+                    filtered.sort((a, b) => b.id - a.id);
+                    break;
+                case 'price-low':
+                    filtered.sort((a, b) => a.price - b.price);
+                    break;
+                case 'price-high':
+                    filtered.sort((a, b) => b.price - a.price);
+                    break;
+                case 'name':
+                    filtered.sort((a, b) => a.name.localeCompare(b.name));
+                    break;
+                default: // featured
+                    filtered.sort((a, b) => (b.featured ? 1 : 0) - (a.featured ? 1 : 0));
+            }
+
+            // Update product count
+            document.getElementById('productCount').textContent = `${filtered.length} product${filtered.length !== 1 ? 's' : ''} found`;
+
+            // Render products
+            const grid = document.getElementById('productsGrid');
+            if (filtered.length === 0) {
+                grid.innerHTML = '<p style="grid-column: 1/-1; text-align: center; padding: 48px 0; color: var(--text-muted);">No products match your filters.</p>';
+                return;
+            }
+
+            grid.innerHTML = filtered.map(product => createProductCard(product)).join('');
+        }
     </script>
 </body>
 </html>
