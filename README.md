@@ -1,4 +1,4 @@
-# Khidmitak static site bundle
+# Seereh static site bundle
 
 This folder now ships a multi-page static site ready to deploy as-is. Pages use shared header/footer partials, a central design token sheet, and lightweight JavaScript for the mobile menu.
 
